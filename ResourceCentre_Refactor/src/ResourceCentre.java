@@ -328,12 +328,13 @@ public class ResourceCentre {
 		boolean isReturned = false;
 
 		for (int i = 0; i < chromebookList.size(); i++) {
-			String assetTag = chromebookList.get(i).getAssetTag();
-			boolean isAvailable = chromebookList.get(i).getIsAvailable();
+			Chromebook chromebook = chromebookList.get(i);
+			String assetTag = chromebook.getAssetTag();
+			boolean isAvailable = chromebook.getIsAvailable();
 			if (tag.equalsIgnoreCase(assetTag)
 					&& isAvailable == false) {
-				chromebookList.get(i).setIsAvailable(true);
-				chromebookList.get(i).setDueDate("");
+				chromebook.setIsAvailable(true);
+				chromebook.setDueDate("");
 				isReturned = true;
 				
 			}
