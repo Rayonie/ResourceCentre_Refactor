@@ -299,12 +299,13 @@ public class ResourceCentre {
 		boolean isReturned = false;
 
 		for (int i = 0; i < camcorderList.size(); i++) {
-			String assetTag = camcorderList.get(i).getAssetTag();
-			boolean isAvailable = camcorderList.get(i).getIsAvailable();
+			Camcorder camcorder = camcorderList.get(i);
+			String assetTag = camcorder.getAssetTag();
+			boolean isAvailable = camcorder.getIsAvailable();
 			if (tag.equalsIgnoreCase(assetTag)
 					&& isAvailable == false) {
-				camcorderList.get(i).setIsAvailable(true);
-				camcorderList.get(i).setDueDate("");
+				camcorder.setIsAvailable(true);
+				camcorder.setDueDate("");
 				isReturned = true;			
 			}
 		}
